@@ -6,7 +6,7 @@ metadata:
   name: node-hello-world
   namespace: default
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: node-hello-world
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - image: >-
-            gcr.io/kubernetes-helm-295208/github_cassanellicarlo_kubernetes-terraform
+            gcr.io/kubernetes-helm-295208/github.com/cassanellicarlo/kubernetes-terraform
           imagePullPolicy: IfNotPresent
           name: kubernetes-terraform-1
 ---
@@ -31,7 +31,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   labels:
     app: node-hello-world
-  name: node-hello-world-hpa-m9zi
+  name: node-hello-world-hpa-wye8
   namespace: default
 spec:
   maxReplicas: 5
